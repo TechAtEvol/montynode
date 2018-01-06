@@ -28,8 +28,14 @@ const gameService = () => {
   const firstSelectReturnesAnUnselectedLakeWithoutNessiePresentedAsSearched = (lakes, selectedLake) => {
     lakes[selectedLake].isSelected= true;
     lakes.map(lake => {
+      const noOfLakes = lakes.size;
+      let searchedLakes = 0;
+      const MaxLakesToPresentAsSearched = noOfLakes - 2;
       if(!lake.isSelected && !lake.hasNessie) {
-        lake.isSearched = true;
+        if(searchedLakes < MaxLakesToPresentAsSearched) {
+          lake.isSearched = true;
+          searchedLakes = searchedLakes+1
+        }
       }
     })
     return lakes;

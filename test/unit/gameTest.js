@@ -12,11 +12,13 @@ describe('a Mounty Hall based Find Nessie game',() => {
       expect(lakes.length).to.equal(numberOfLakesInGame);
       done();
     });
-    it('has one randomly placed Nessie beneath a lake', (done) => {
+    it('has Nessie randomly placed beneath a lake', (done) => {
       expect(lakes.filter(lake => lake.hasNessie === true).length).to.equal(1);
       done();
     });
-    it('a first selection in the game presents in response an unselected, empty Lake to the gamer', (done) => {
+  });
+  describe('on a first selection', () => {
+    it('presents in response an unselected, empty Lake to the gamer', (done) => {
       //given
       const createLake = gameService.createLake;
       const lakeWithNessie = createLake(false, false, true);
@@ -35,8 +37,20 @@ describe('a Mounty Hall based Find Nessie game',() => {
       chai.expect(actualResult).to.deep.equal(expectedResult);
       done();
     });
+
   });
-  //it can take lakes with a selected lake and present another lake without Nessie
-  //it can can present a found or not found on a lake switch for the game
-  //it can store and present the result over a simulation of a given number of games
+
+  describe('on a second selection with a switch of choice', () => {
+    it('presents a found or not found for Nessie!', (done) => {
+      expect(true).to.equal(false);
+      done()
+    })
+  })
+
+  describe('on a simulation over a number of games', () => {
+    it('presents the stored statistics for winning on a switch', (done) => {
+      expect(true).to.equal(false);
+      done();
+    })
+  })
 });
