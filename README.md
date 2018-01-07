@@ -1,11 +1,21 @@
-# Montynode
-A Monty Hall demo.
-When using the API to play game round, the system simulates that the player selects the first lake in the first game and when the game host presents which lake Nessie not is hiding in, besides the selected lake - the player switches to another lake.  
-Repeated play presents statistics that supports if switching is better than staying over time.  
+# The Montynode-project
 
-A simulation can be run to support the claim that switching is a winning strategy in two thirds of the time
+## Description
+A [Monty Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem) demo.   
 
-# Requirements
+When using the API a complete game is run in one call.  
+
+The game consists of the following steps:
+- In search for Nessie an explorer arrives at the first lake
+- A fisherman informs the player that Nessie is not in the second lake but it could be in the first or the third.
+- The explorer switches to the third lake and searches for Nessie
+- The result is presented 
+
+When using the simulation a series of games are run and the statistics are presented.  
+
+Is it true that two thirds of the time it is better to switch rather then staying?
+
+## Requirements
 git, a nodejs install and command-line knowledge
 
 ## Install
@@ -24,5 +34,5 @@ npm start
 Auto-restarts server on file save
 npm run watch
 
-# API use
+## API use
 http://localhost:3000/api/games/play
