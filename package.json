@@ -5,6 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha test/**/*.js",
+    "unit": "mocha test/unit/*.js",
+    "sim": "mocha test/sim/*.js",
     "start": "node app.js",
     "watch": "node ./node_modules/nodemon/bin/nodemon.js"
   },
