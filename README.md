@@ -1,7 +1,9 @@
 # Montynode
 A Monty Hall demo.
 When using the API to play game round, the system simulates that the player selects the first lake in the first game and when the game host presents which lake Nessie not is hiding in, besides the selected lake - the player switches to another lake.  
-Repeated play presents statistics that supports if switching is better than staying over time.
+Repeated play presents statistics that supports if switching is better than staying over time.  
+
+A simulation can be run to support the claim that switching is a winning strategy in two thirds of the time
 
 # Requirements
 git, a nodejs install and command-line knowledge
@@ -11,6 +13,9 @@ npm install
 
 ## Test
 npm test
+
+## Simulation
+npm run sim
 
 ## Start server
 npm start
