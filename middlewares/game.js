@@ -1,10 +1,12 @@
+const gameService = require('../services/gameService')();
 const game = () => {
-  const init = (req, res) => {
-    res.send('init');
+  const play = (req, res) => {
+    const result = gameService.runAGameWith3Lakes();
+    res.send(result);
   };
 
   return {
-    init: init
+    play: play
   }
 
 };

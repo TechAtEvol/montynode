@@ -42,15 +42,27 @@ describe('a Mounty Hall based Find Nessie game',() => {
 
   describe('on a second selection with a switch of choice', () => {
     it('presents a found or not found for Nessie!', (done) => {
-      expect(true).to.equal(false);
+      const createLake = gameService.createLake;
+      const lakeWithNessie = createLake(false, false, true);
+      const lakesWithAFirstSelection = [
+        createLake(true, false, false),
+        lakeWithNessie,
+        createLake(false, true, false)
+      ];
+      const actualResult = gameService.secondSelectionWithASwitch(lakesWithAFirstSelection)
+      expect(actualResult).to.be.true;
       done()
     })
   })
 
   describe('on a simulation over a number of games', () => {
-    it('presents the stored statistics for winning on a switch', (done) => {
-      expect(true).to.equal(false);
+    it('is possible to store the result for a game round as a boolean', (done) => {
+      const switchWinsRepo = require('../../repositories/switchWinsRepo')();
+      switchWinsRepo.addGameResult(true);
+      switchWinsRepo.addGameResult(false);
+      expect(switchWinsRepo.getGameResults()).to.deep.equal([true, false]);
       done();
     })
+    //presents the stored statistics for winning on a switch
   })
 });
