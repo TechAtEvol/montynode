@@ -75,7 +75,7 @@ const gameService = () => {
         return sum;
     },0);
     const rateForSwitch = Number.parseFloat(((noOfWins / noOfGames) * 100).toPrecision(4));
-    const rateForStay = 100 - rateForSwitch;
+    const rateForStay = Number.parseFloat((100 - rateForSwitch).toPrecision(4));
 
     return {
       result: isWinOnSwitch ? 'win on switch' : 'loss on switch',
